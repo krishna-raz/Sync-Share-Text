@@ -1,0 +1,171 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    padding-bottom: 60px; /* Space for footer */
+}
+
+/* Header Buttons */
+.d-flex.justify-content-between {
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Text Area */
+#shared-text-area {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    border: 2px solid #e3e3e3;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: border-color 0.3s ease;
+}
+
+#shared-text-area:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+/* File Upload Form */
+#file-upload-form input[type="file"] {
+    border: 2px dashed #ced4da;
+    padding: 20px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+#file-upload-form input[type="file"]:hover {
+    border-color: #007bff;
+}
+
+/* File Display Grid */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.file-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.file-item:hover {
+    transform: translateY(-3px);
+}
+
+.img-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.file-actions {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background-color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 15px 0;
+    border-top: 1px solid #dee2e6;
+}
+
+#visitor-count {
+    text-align: center;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .d-flex.justify-content-between {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .file-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #shared-text-area {
+        min-height: 200px;
+    }
+
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hidden-xs {
+        display: none !important;
+    }
+    
+    .btn span {
+        display: none;
+    }
+}
+
+.footer1 {
+text-align: center;
+}

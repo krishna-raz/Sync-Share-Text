@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Text Sync - Real-Time Collaborative Editing & File Sharing</title>
+    <meta name="description" content="Real-time collaborative text editing with instant synchronization. Upload & share files (auto-deleted after 7 days). Created by Krishna Raj. Join thousands of users for seamless live document collaboration.">
+    <meta name="keywords" content="live text sync, real-time collaboration, shared document editing, instant text sync, file sharing, collaborative writing, Krishna Raj">
+    <meta property="og:title" content="Live Text Sync - Collaborative Editing & File Sharing">
+    <meta property="og:description" content="Sync text in real-time with multiple users. Upload files & collaborate instantly. Files auto-delete after 7 days. Created by Krishna Raj.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@YourHandle">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Live Text Sync",
+      "description": "Real-time collaborative text editor with file sharing capabilities",
+      "applicationCategory": "CollaborationTool",
+      "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "Krishna Raj"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between mb-3">
+            <button id="copy-text-btn" class="btn btn-outline-primary">
+                <i class="fas fa-copy"></i> Copy
+            </button>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#upload-modal">
+                <i class="fas fa-upload"></i> Upload
+            </button>
+            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#download-modal">
+                <i class="fas fa-download"></i> Download
+            </button>
+        </div>
+
+        <div class="form-group">
+            <h1 class="h2">Start Typing</h1>
+            <!-- <p class="lead">Collaborate with others in real-time! All changes sync instantly across devices. Upload files for team access (automatically deleted after 7 days).</p> -->
+            <textarea id="shared-text-area" class="form-control" rows="10"></textarea>
+        </div>
+
+        <!-- Upload Modal -->
+        <div class="modal fade" id="upload-modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload Files</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-danger">Files are automatically deleted every <b>7 days</b>.</p>
+                        <form id="file-upload-form" enctype="multipart/form-data">
+                            <input type="file" name="files">
+                            <button type="submit" class="btn btn-primary mt-2">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Modal -->
+        <div class="modal fade" id="download-modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your Uploaded Files</h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="file-display-container" class="file-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div id="visitor-count">
+            <h2>Visitor Count: <span id="count"><%= visitorCount %></span></h2>
+        </div>
+        <div class="footer1">
+            <p>Created by <a href="https://krishna-raj.vercel.app/" target="_blank" rel="noopener noreferrer">Krishna Raj</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+
+</html>
