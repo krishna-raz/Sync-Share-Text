@@ -3,7 +3,7 @@ dotenv.config();
 const mongoose = require('mongoose');
 
 // Connect to MongoDB database
-mongoose.connect("mongodb+srv://admin:demo@cluster0.oj9mebk.mongodb.net/wifisync", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
